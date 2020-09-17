@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { v4 as uuid } from "uuid";
 import Todos from "./Todos";
+import Comments from "./Comments";
 
 export const UserContext = React.createContext();
 
 export default function Users() {
   const [users, setUsers] = useState([]);
-  const [selectedUser, setSelectedUser] = useState(0);
+  const [selectedUser, setSelectedUser] = useState({ id: 0 });
 
   const renderUsers = () =>
     users.map((i) => (
@@ -39,6 +40,7 @@ export default function Users() {
       <ol>{renderUsers()}</ol>
       <UserContext.Provider value={contextData}>
         <Todos id={selectedUser.id} />
+        <Comments id={selectedUser.id} />
       </UserContext.Provider>
     </div>
   );

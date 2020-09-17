@@ -35,6 +35,7 @@ export default function Todos(props) {
       });
 
   useEffect(() => {
+    setTodos([]);
     getUserTodos(props.id);
   }, [props.id]);
 
