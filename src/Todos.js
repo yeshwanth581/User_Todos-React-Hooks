@@ -70,6 +70,9 @@ export default function Todos(props) {
       </AppContext.Consumer>
       <h2>Context with hooks</h2>
       <div>App name is == {appContextHookData.name}</div>;
+      <button onClick={appContextHookData.toggleUsersView}>
+        hide view for users and todos and comments
+      </button>
       <div>
         User name is =={" "}
         {userContextHookData ? userContextHookData.selectedUser.name : null}
